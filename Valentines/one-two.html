@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="css/heart.css">
+  </head>
+  <script>
+  function myFunction() {
+    let x = document.getElementById("numb").value;
+    let text;
+    let imageSrc;
+    if (isNaN(x) || x < 1 || x > 2) {
+      alert("Follow the instructions. It's very simple.");
+      text = "Try again";
+      imageSrc = "";
+    } 
+    else {
+      if (x == 1) {
+        imageSrc = "cats_heart.png"
+      }
+      if (x == 2) {
+        imageSrc = "dog_hearts.png"
+      }
+    }
+    document.getElementById("demo").innerHTML = "";
+  if (imageSrc) { 
+        let img = document.createElement("img"); 
+        img.src = imageSrc; 
+        document.getElementById("demo").appendChild(img); 
+      }
+  }
+  function displayMessage() {
+        let name = document.getElementById("name").value;
+        if (name) {
+          document.getElementById("nameMessage").innerHTML = "Hello, " + name + " Happy Valentine Day!!!";
+        } else {
+          alert("Just put your name in.");
+        }
+      }
+    </script>
+    <body>
+      <div class="container">
+        <div class="content">
+      <p>Enter your name:</p>
+      <input id="name">
+      <button type="button" onclick="displayMessage()">Submit</button>
+      <p id="nameMessage"></p> 
+      <p>Type 1 or 2:</p>
+      <input id="numb">
+      <button type="button" onclick="myFunction()">Submit</button>
+      <p id="demo"></p> 
+        </div>
+      </div>
+    </body>
+</html>
